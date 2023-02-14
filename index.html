@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/df8d43a00b.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-box">
+        <h1 id="title">Cadastre-se</h1>
+        <form>
+          <div class="input-group">
+            <div class="input-field" id="nameField">
+              <i class="fa-solid fa-user"></i>
+              <input type="text" placeholder="Seu nome" />
+            </div>
+
+            <div class="input-field">
+              <i class="fa-solid fa-envelope"></i>
+              <input type="email" placeholder="Seu email" />
+            </div>
+
+            <div class="input-field">
+              <i class="fa-solid fa-lock"></i>
+              <input type="password" placeholder="Sua senha" />
+            </div>
+            <p><a href="#">Esqueci minha senha</a></p>
+          </div>
+          <div class="btn-field">
+            <button type="button" id="signupBtn">Cadastre-se</button>
+            <button type="button" id="signinBtn" class="desabilitado">
+              Login
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      let signupBtn = document.getElementById("signupBtn");
+      let signinBtn = document.getElementById("signinBtn");
+      let nameField = document.getElementById("nameField");
+      let title = document.getElementById("title");
+
+      signinBtn.onclick = function () {
+        nameField.style.maxHeight = "0";
+        title.innerHTML = "Login";
+        signupBtn.classList.add("desabilitado");
+        signinBtn.classList.remove("desabilitado");
+      };
+
+      signupBtn.onclick = function () {
+        nameField.style.maxHeight = "60px";
+        title.innerHTML = "Cadastre-se";
+        signupBtn.classList.remove("desabilitado");
+        signinBtn.classList.add("desabilitado");
+      };
+    </script>
+  </body>
+</html>
